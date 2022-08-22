@@ -4,8 +4,9 @@ class Solution {
         HashMap<Integer,Integer> sum= new HashMap<>();
         for(int i=0;i<nums.length;i++){
             if(sum.containsKey(target -nums[i])){
-                a[0]=i;
-                a[1]=sum.get(target-nums[i]);
+                
+                a[0]=sum.get(target-nums[i]);
+                a[1]=i;
                 break;
             }
             sum.put(nums[i],i);
