@@ -1,12 +1,11 @@
 class Solution {
     public int change(int amount, int[] coins) {
-        int[] ch=new int[amount +1];
-        ch[0]=1;
-        for(int coin:coins){
-            for(int i=coin;i<amount+1;i++){
-                ch[i]+=ch[i-coin];
-            }
-        }
-        return ch[amount];
+        int arr[] = new int[amount+1];
+        Arrays.fill(arr, 0);
+        arr[0] = 1;
+        for(int c : coins)
+            for(int i = c; i <= amount; i++)
+                arr[i] += arr[i-c];
+        return arr[amount];
     }
 }
