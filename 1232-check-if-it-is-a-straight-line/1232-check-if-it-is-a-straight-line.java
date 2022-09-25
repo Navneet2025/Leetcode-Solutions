@@ -1,14 +1,20 @@
 class Solution {
-    public boolean checkStraightLine(int[][] coordinates) {
-        if(coordinates.length==2){
+    public boolean checkStraightLine(int[][] Coordinate) {
+        if(Coordinate.length==2)
             return true;
-        }
-        int dx=(coordinates[1][1]-coordinates[0][1]);
-        int dy=(coordinates[1][0]-coordinates[0][0]);
-        for(int i=2;i<coordinates.length;i++){
-            if(dx*(coordinates[i][0]-coordinates[1][0])!=dy*(coordinates[i][1]-coordinates[1][1]))
+        for(int i=0;i<Coordinate.length-2;i++){
+            int a = Coordinate[i+1][0];
+            int b = Coordinate[i+1][1];
+            int c = Coordinate[i][0];
+            int d = Coordinate[i][1];
+            int e = Coordinate[i+2][0];
+            int f = Coordinate[i+2][1];
+            
+            
+            if((b-d)*(e-a) !=(a-c)*(f-b))
                 return false;
         }
+        
         return true;
         
     }
